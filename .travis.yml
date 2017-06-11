@@ -22,5 +22,5 @@ before_install:
 - cp .travis/ssh_config ~/.ssh/config
 
 after_script:
-- scp -o StrictHostKeyChecking=no index.js ubuntu@bestnomad:/home/ubuntu/cidemo
+- scp -o StrictHostKeyChecking=no index.js ubuntu@bestnomad.com:/home/ubuntu/cidemo
 
