@@ -1,7 +1,24 @@
 language: node_js
 node_js:
 - 4.4.1
-- v7.10.0
+- 7.10.0
+
+branches:
+  only:
+  - master
+
 before_install:
 - openssl aes-256-cbc -K $encrypted_90be74a6d39c_key -iv $encrypted_90be74a6d39c_iv
   -in travis_key.enc -out travis_key -d
+
+# 改变文件权限
+- chmod 600 ~/.ssh/travis_key
+
+# 配置 ssh
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/travis_key
+- cp .travis/ssh_config ~/.ssh/config
+
+after_script:
+- scp -o StrictHostKeyChecking=no index.js ubuntu@bestnomad:/home/ubuntu/cidemo
+
