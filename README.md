@@ -8,7 +8,7 @@
 ```sh
 $ npm install --save oq-color-name-decimal
 ```
-## USAGE
+## USAGEfwf
 ```js
 var colors = require('oq-color-name-decimal');
 colors.red //[255,0,0]
