@@ -1,0 +1,6 @@
+User ubuntu
+Host bestnomad.com
+StrictHostKeyChecking no
+IdentityFile ~/.ssh/travis_key
+
+IdentitiesOnly yes
